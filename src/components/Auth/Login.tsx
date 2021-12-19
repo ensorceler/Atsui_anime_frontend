@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "../../styles/Auth.Styles";
 import useLogin from "../../hooks/useLogin";
+import * as S from "../../styles/Auth.Styles";
 import { Spinner } from "../../styles/Icons";
 
 interface LoginProps {

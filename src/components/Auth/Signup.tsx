@@ -102,19 +102,19 @@ const Signup = () => {
         time_of_joining: Date.now().toString().substring(0, 10),
       });
       console.log(res);
-      dispatch((p) => ({
+      dispatch({
         success: true,
         loading: false,
         error: false,
-      }));
+      });
     } catch (err) {
       console.log(err);
 
-      dispatch((p) => ({
+      dispatch({
         success: false,
         loading: false,
         error: true,
-      }));
+      });
     }
   };
 
