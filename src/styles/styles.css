@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap");
+body {
+  font-family: "Lexend Deca", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-clip: content-box;
+  background: rgba(50, 50, 50, 1);
+}
+body::-webkit-scrollbar-thumb {
+  border: 5px solid lightsteelblue;
+  border-radius: 10px;
+}
