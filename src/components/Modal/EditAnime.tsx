@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineConsoleSql } from "react-icons/ai";
 import useEditAnime from "../../hooks/useEditAnime";
 import { AddIcon, MinusIcon, Spinner } from "../../styles/Icons";
 import * as S from "./ModalStyle";
@@ -71,9 +70,7 @@ const Rating = ({ trackAnimeData, setTrackAnimeData }: any) => {
 
 const EditAnime = ({ anime, showEditModal, setShowEditModal }: Props) => {
   const modalRef = React.useRef(null);
-  const [startDate, setStartDate] = React.useState<string>("2021-04-20");
-  const [finishDate, setFinishDate] = React.useState(new Date());
-  const startDateRef = React.useRef(null);
+  const [_, setStartDate] = React.useState<string>("2021-04-20");
   const [trackAnimeData, setTrackAnimeData] =
     React.useState<trackAnimeDataProp>({
       status: "watching",
@@ -137,19 +134,6 @@ const EditAnime = ({ anime, showEditModal, setShowEditModal }: Props) => {
         }));
       }
     }
-  };
-
-  const changeStartDate = (e: any) => {
-    setTrackAnimeData((p) => ({
-      ...p,
-      start_date: e.target.value,
-    }));
-  };
-  const changeEndDate = (e: any) => {
-    setTrackAnimeData((p) => ({
-      ...p,
-      end_date: e.target.value,
-    }));
   };
 
   const changeReview = (e: any) => {

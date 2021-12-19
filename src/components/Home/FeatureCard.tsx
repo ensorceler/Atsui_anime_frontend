@@ -1,7 +1,6 @@
 import React from "react";
 import * as Styles from "../../styles/FeatureCard.styles";
 import { BsFillTagFill } from "react-icons/bs";
-import taktop from "../../../public/takt_op_destiny.jpg";
 const cardData = [
   {
     title: "Takt Op. Destiny",

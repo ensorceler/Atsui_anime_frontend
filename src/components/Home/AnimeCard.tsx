@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { AiFillStar } from "react-icons/ai";
 import { useRouter } from "next/router";
 

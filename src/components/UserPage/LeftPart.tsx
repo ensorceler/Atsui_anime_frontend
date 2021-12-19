@@ -58,7 +58,7 @@ const ShowWatchlist = ({
   );
   const [SyncAnime, setSyncAnime] = React.useState<AnimeListProp>(animeList);
 
-  const { mutate, data, error, isValidating } = useSWR(
+  const { mutate, data, isValidating } = useSWR(
     `https://atsui-api.herokuapp.com/getlist`,
     FetchAnime,
     {
@@ -94,7 +94,7 @@ const ShowWatchlist = ({
       )}
 
       <S.GridItems>
-        {SyncAnime.map((anime, idx: number) => (
+        {SyncAnime.map((anime) => (
           <S.AnimeCard key={anime.anime_id}>
             <S.AnimeCardImage src={anime.image_url} />
             <S.AnimeCardContent>

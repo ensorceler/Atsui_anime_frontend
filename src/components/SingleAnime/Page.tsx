@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import InfoLeft from "./InfoLeft";
 import InfoRight from "./InfoRight";
 import useSWR from "swr";
 import { animedata } from "../../utility/singleanime";
-import Nav from "../Shared/Nav";
 import AddAnime from "../Modal/AddAnime";
 import { parseCookies } from "nookies";
 
@@ -45,14 +44,10 @@ const Page = ({ animeData }: PageProps) => {
   const [showModal, setShowModal] = React.useState<boolean>(false);
   const [shouldFetch, setShouldFetch] = React.useState<boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false);
-  const { data, error, isValidating } = useSWR(
-    shouldFetch ? checkurl : null,
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateIfStale: true,
-    }
-  );
+  const { data } = useSWR(shouldFetch ? checkurl : null, fetcher, {
+    revalidateOnFocus: false,
+    revalidateIfStale: true,
+  });
 
   React.useEffect(() => {
     const cookies = parseCookies();

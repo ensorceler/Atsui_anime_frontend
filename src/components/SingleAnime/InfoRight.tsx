@@ -4,16 +4,6 @@ import * as S from "../../styles/InfoRight.Styles";
 import { BookmarkIcon, Spinner } from "../../styles/Icons";
 import useSWR from "swr";
 import axios from "axios";
-const RequestData = async (id: number, type: string) => {
-  try {
-    const res = await fetch(`https://api.jikan.moe/v3/anime/${id}/${type}`);
-    const data = await res.json();
-    return { ...data };
-  } catch (err) {
-    console.log(err);
-    return null;
-  }
-};
 
 const Videos = ({ id }: { id: number }) => {
   const { data, isValidating, error } = useSWR(
@@ -97,6 +87,13 @@ const Similar = ({ id }: { id: number }) => {
       return await axios.get(url).then((res) => res.data);
     }
   );
+  if (error) {
+    return (
+      <React.Fragment>
+        <h1>Error</h1>
+      </React.Fragment>
+    );
+  }
   if (isValidating)
     return (
       <React.Fragment>
@@ -117,7 +114,7 @@ const Similar = ({ id }: { id: number }) => {
   if (data) {
     return (
       <div>
-        {data.recommendations.map((anime: any, idx: number) => (
+        {data.recommendations.map((anime: any) => (
           <S.SimilarCard key={anime.mal_id}>
             <div>
               <S.SimilarCardImage src={anime.image_url} />
@@ -179,7 +176,6 @@ const ShowOP = ({ opening, ending }: { opening: any; ending: any }) => {
 };
 
 const InfoRight = ({
-  showModal,
   setShowModal,
   animeData,
 }: {

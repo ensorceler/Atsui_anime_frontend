@@ -55,7 +55,7 @@ export const CardDetails = styled.div`
   p {
     margin: 0px;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(240, 240, 240, 0.8);
     inline-size: 95%;
     margin-left: 10px;
@@ -65,7 +65,7 @@ export const CardGenres = styled.div`
   p {
     margin: 0px;
     margin-bottom: 20px;
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(240, 240, 240, 0.8);
     inline-size: 95%;
     margin-left: 10px;

@@ -11,30 +11,6 @@ interface trackAnimeDataProp {
   end_date: string | null;
   review: string;
 }
-interface requestStatusProps {
-  loading: boolean;
-  error: boolean;
-  data: any;
-}
-
-interface Props {
-  animeData: animeProps;
-  trackAnimeData: trackAnimeDataProp;
-}
-const requestInitStatus: requestStatusProps = {
-  loading: false,
-  error: false,
-  data: null,
-};
-const changeRequestStatus = (action: any, state: requestStatusProps) => {
-  switch (action) {
-    default:
-      return {
-        ...state,
-      };
-  }
-};
-
 const useAddAnime = (
   animeData: animeProps,
   trackAnimeData: trackAnimeDataProp
@@ -71,8 +47,10 @@ const useAddAnime = (
         }
       );
       //console.log(res);
-      setLoading(false);
-      setData(true);
+      if (res) {
+        setLoading(false);
+        setData(true);
+      }
     } catch (err: any) {
       setLoading(false);
       setError(true);

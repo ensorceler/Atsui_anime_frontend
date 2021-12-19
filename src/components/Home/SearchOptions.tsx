@@ -21,7 +21,6 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
 `;
-const InputContainer = styled.select``;
 
 const SearchButton = styled.button`
   border: none;

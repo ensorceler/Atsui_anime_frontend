@@ -29,7 +29,6 @@ const PanelCard = () => {
   };
 
   React.useEffect(() => {
-    const authToken = localStorage.getItem("access-token");
     const cookies = parseCookies();
     checkSession(cookies["access-token"]);
   }, []);

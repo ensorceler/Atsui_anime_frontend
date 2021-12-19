@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
@@ -36,8 +35,6 @@ const StyledLink = styled.a`
 `;
 
 const NotFound = () => {
-  const router = useRouter();
-
   return (
     <Container>
       <Head>

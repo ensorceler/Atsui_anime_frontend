@@ -1,5 +1,5 @@
 import React from "react";
-import { parseCookies, setCookie } from "nookies";
+import { setCookie } from "nookies";
 import axios from "axios";
 import { useRouter } from "next/router";
 
@@ -16,7 +16,7 @@ interface LoginProps {
 
 const useLogin = () => {
   const router = useRouter();
-  const [responseData, setResponseData] = React.useState<Object | null>(null);
+  const [responseData, _] = React.useState<Object | null>(null);
   const [requestData, MakeRequest] = React.useState<LoginProps | any>(null);
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(false);

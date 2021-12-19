@@ -1,5 +1,5 @@
 import router from "next/router";
-import { destroyCookie, parseCookies } from "nookies";
+import { destroyCookie } from "nookies";
 import React from "react";
 import * as S from "./RightPart.Styles";
 
@@ -62,10 +62,6 @@ const RightPart = () => {
   const [username, setUsername] = React.useState<string>("loading");
 
   const [optionState, setOptionState] = React.useState<string>("panel");
-
-  const changeOptionState = (option: string) => () => {
-    setOptionState(option);
-  };
 
   React.useEffect(() => {
     let x = localStorage.getItem("user_name")!;

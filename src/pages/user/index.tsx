@@ -2,11 +2,10 @@ import React from "react";
 import LeftPart from "../../components/UserPage/LeftPart";
 import RightPart from "../../components/UserPage/RightPart";
 import styled from "styled-components";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext } from "next";
 import { parseCookies } from "nookies";
 import axios from "axios";
 import { device } from "../../styles/globalStyles";
-import EditAnime from "../../components/Modal/EditAnime";
 const Usercontainer = styled.div`
   position: relative;
   width: 1300px;

@@ -6,7 +6,6 @@ import { DownIcon, UpIcon } from "../../styles/Icons";
 import produce from "immer";
 import { searchQueryStore } from "../../context/store";
 import router from "next/router";
-import SeasonResults from "./SeasonResults";
 
 const Container = styled.div`
   width: 100%;

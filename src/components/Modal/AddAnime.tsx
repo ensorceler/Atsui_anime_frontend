@@ -1,5 +1,3 @@
-import axios from "axios";
-import { parseCookies } from "nookies";
 import React from "react";
 import useAddAnime from "../../hooks/useAddAnime";
 import { AddIcon, MinusIcon, Spinner } from "../../styles/Icons";
@@ -67,14 +65,15 @@ const AddAnime = ({
 }: Props) => {
   const modalRef = React.useRef(null);
 
-  const [trackAnimeData, setTrackAnimeData] = React.useState({
-    status: "watching",
-    episodes_watched: 0,
-    rating: 0,
-    start_date: null,
-    end_date: null,
-    review: "",
-  });
+  const [trackAnimeData, setTrackAnimeData] =
+    React.useState<trackAnimeDataProp>({
+      status: "watching",
+      episodes_watched: 0,
+      rating: 0,
+      start_date: null,
+      end_date: null,
+      review: "",
+    });
 
   const { data, error, setMutate, loading } = useAddAnime(
     animeData,
