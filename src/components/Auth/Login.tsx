@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "../../styles/Auth.Styles";
-import { useRouter } from "next/router";
 import useLogin from "../../hooks/useLogin";
 import { Spinner } from "../../styles/Icons";
 
@@ -10,12 +9,11 @@ interface LoginProps {
 }
 
 const Login = () => {
-  const router = useRouter();
   const [authCredentials, setAuthCredentials] = React.useState<LoginProps>({
     username: "",
     password: "",
   });
-  const { responseData, MakeRequest, success, error, loading } = useLogin();
+  const { MakeRequest, success, error, loading } = useLogin();
   let regexRef = React.useRef(false);
 
   const [regexError, setRegexError] = React.useState({
